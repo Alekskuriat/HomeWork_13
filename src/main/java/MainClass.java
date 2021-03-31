@@ -38,16 +38,14 @@ public class MainClass {
     }
 
     public static void win(Car c) {
-        try {
             lock.lock();
             if (flag) {
                 System.out.println(c.getName() + " WIN");
                 flag = false;
             }
             cdlFinish.countDown();
-        } finally {
             lock.unlock();
-        }
+
     }
 }
 
